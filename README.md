@@ -1,1 +1,0 @@
-# kurz-Python-1
