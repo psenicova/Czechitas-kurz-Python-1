@@ -1,5 +1,5 @@
-celeJmeno = input("Zadej jméno a příjmení: ")
-jmeno, prijmeni = celeJmeno.split(" ")
+jmeno_a_prijmeni = input("Zadej jméno a příjmení: ")
+jmeno, prijmeni = jmeno_a_prijmeni.split(" ")
 
 #všechna písmena velká (vypíše např. JANA MALÁ)
 print(f"{jmeno.upper()} {prijmeni.upper()}")
@@ -17,4 +17,4 @@ print(jmeno[0] + ". " + prijmeni[0] + ".")
 if len(jmeno)>5:
     print(jmeno[0] + ". " + prijmeni)
 else:
-    print(celeJmeno)
+    print(jmeno_a_prijmeni)
