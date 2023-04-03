@@ -18,3 +18,4 @@ if len(jmeno)>5:
     print(jmeno[0] + ". " + prijmeni)
 else:
     print(jmeno_a_prijmeni)
+    # nebo print(f"{jmeno.strip()} {prijmeni.strip()}")
