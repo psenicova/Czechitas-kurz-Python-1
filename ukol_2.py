@@ -8,7 +8,7 @@ sklad = {
   "BC547C": 10
 }
 
-print(sklad.items())
+#print(sklad.items())
 
 kod_soucastky = input("Zadej kód součástky: ")
 if kod_soucastky not in sklad:
