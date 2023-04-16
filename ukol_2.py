@@ -22,4 +22,4 @@ else:
     else:
         print(f'Poptávku lze uspokojit v plné výši')
         sklad[kod_soucastky] -= pocet_soucastek #sniž počet součástek na skladě o množství požadované zákazníkem
-        print(sklad[kod_soucastky])
+        print(f'Na skladě zbývá {sklad[kod_soucastky]} kusů.')
