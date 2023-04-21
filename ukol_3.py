@@ -3,14 +3,17 @@ import json
 with open('body.json', encoding='utf-8') as file:
     hodnoceni = json.load(file)
 
-import json
-
+nove_hodnoceni = {}
 print(hodnoceni.items())
 for jmeno, body in hodnoceni.items():
     if body >= 60:
-        hodnoceni[jmeno] = "Pass"
+        nove_hodnoceni[jmeno] = "Pass"
     else:
-        hodnoceni[jmeno] = "Fail"
+        nove_hodnoceni[jmeno] = "Fail"
+
+print(hodnoceni)
+print(nove_hodnoceni)
 
 with open('prospech.json', mode='w', encoding='utf-8') as file:
-    json.dump(hodnoceni, file, ensure_ascii=False)
+    json.dump(nove_hodnoceni, file, ensure_ascii=False)
+
