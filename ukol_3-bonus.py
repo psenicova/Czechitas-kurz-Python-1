@@ -3,39 +3,36 @@ import json
 with open('body.json', encoding='utf-8') as file:
     body = json.load(file)
 
-import json
-
 with open('bonusy.json', encoding='utf-8') as file:
     bonusy = json.load(file)
 
-print(body.items())
-print(bonusy.items())
+prospech = {}
 
-body_celkem = {}
+for jmeno, pocet_bodu in body.items():
+    prospech[jmeno] = "Fail"
 
-for bod in body:
-    vysledne_body = body[bod]
-    #print(vysledne_body)
+    if pocet_bodu > 60:
+        prospech[jmeno] = "Pass"
 
-for bonus in bonusy:
-    vysledne_bonusy = bonusy[bonus]
-    #print(vysledne_bonusy)
 
-body_celkem = vysledne_body + vysledne_bonusy
+for jmeno, bonus in bonusy.items():
+    if jmeno in body:
+        body[jmeno] = body[jmeno] + bonus
 
-for jmeno, pocet_bodu in body_celkem.items():
-
+for jmeno, pocet_bodu in body.items():
     if pocet_bodu >= 90:
-        body_celkem[jmeno] = 1
+        body[jmeno] = 1
     elif pocet_bodu >= 70:
-        body_celkem[jmeno] = 2
+        body[jmeno] = 2
     elif pocet_bodu >= 50:
-        body_celkem[jmeno] = 3
+        body[jmeno] = 3
     elif pocet_bodu >= 30:
-        body_celkem[jmeno] = 4
+        body[jmeno] = 4
     else:
-        body_celkem[jmeno] = 5
-
+        body[jmeno] = 5
 
 with open('znamky.json', mode='w', encoding='utf-8') as file:
-    json.dump(body_celkem, file, ensure_ascii=False)
+    json.dump(body, file, ensure_ascii=False)
+
+with open('prospech.json', mode='w', encoding='utf-8') as file:
+    json.dump(prospech, file, ensure_ascii=False)
