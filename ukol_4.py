@@ -1,7 +1,7 @@
 tel_cislo_s_mezerami = input("Zadej telefonní číslo: ")
 tel_cislo = tel_cislo_s_mezerami.replace(" ","")
 
-def over_telefon(tel_cislo: int):
+def over_telefon(tel_cislo: int) -> bool:
     """
     Funkce ověřuje zadané telefonní číslo, jestli splňuje podmínky na délku čísla a předvolbu.
     """
@@ -24,7 +24,7 @@ else:
 
 CENA_ZA_180_ZNAKU = 3
 
-def cena_zpravy(zprava: str):
+def cena_zpravy(zprava: str) -> int:
     """
     Funkce vypočítává cenu za zprávu podle podmínky, že za každých započatých 180 znaků zákazník zaplatí 3 Kč.
     """
