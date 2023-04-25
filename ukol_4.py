@@ -2,6 +2,9 @@ tel_cislo_s_mezerami = input("Zadej telefonní číslo: ")
 tel_cislo = tel_cislo_s_mezerami.replace(" ","")
 
 def over_telefon(tel_cislo=int):
+    """
+    Funkce ověřuje zadané telefonní číslo, jestli splňuje podmínky na délku čísla a předvolbu.
+    """
     predvolba = tel_cislo[0:4]
     if predvolba == "+420" and len(tel_cislo) == 13:
         return True
@@ -22,6 +25,9 @@ else:
 CENA_ZA_180_ZNAKU = 3
 
 def cena_zpravy(zprava=str):
+    """
+    Funkce vypočítává cenu za zprávu podle podmínky, že za každých započatých 180 znaků zákazník zaplatí 3 Kč.
+    """
     delka_zpravy = len(zprava)
     if delka_zpravy <= 180:
         return CENA_ZA_180_ZNAKU
