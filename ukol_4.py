@@ -22,17 +22,15 @@ if overeni_cisla == False:
 else:
     zprava = input("Zadej text zprávy: ")
 
-CENA_ZA_180_ZNAKU = 3
+import math
 
 def cena_zpravy(zprava: str) -> int:
     """
     Funkce vypočítává cenu za zprávu podle podmínky, že za každých započatých 180 znaků zákazník zaplatí 3 Kč.
     """
-    delka_zpravy = len(zprava)
-    if delka_zpravy <= 180:
-        return CENA_ZA_180_ZNAKU
-    if delka_zpravy > 180 and delka_zpravy <= 360:
-        return CENA_ZA_180_ZNAKU * 2
+    cena_za_180_znaku = 3
+    pocet_znaku = len(zprava)
+    return math.ceil(pocet_znaku / 180) * cena_za_180_znaku
 
 overeni_ceny = cena_zpravy(zprava)
 print(f'Zpráva tě bude stát {overeni_ceny} Kč.')
