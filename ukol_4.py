@@ -16,7 +16,7 @@ def over_telefon(tel_cislo: int) -> bool:
 overeni_cisla = over_telefon(tel_cislo)
 # print(overeni_cisla) <--- pro případnou kontrolu
 
-if overeni_cisla == False:
+if overeni_cisla == False: #od Kačky: lepší je if not overeni_cisla
      print("Chybně zadané telefonní číslo!")
      exit()
 else:
