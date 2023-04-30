@@ -1,7 +1,7 @@
 tel_cislo_s_mezerami = input("Zadej telefonní číslo: ")
 tel_cislo = tel_cislo_s_mezerami.replace(" ","")
 
-def over_telefon(tel_cislo: int) -> bool:
+def over_telefon(tel_cislo: str) -> bool: #ikdyž vkládáme telefonní číslo, jedná se vlastně o str, nikoliv o int
     """
     Funkce ověřuje zadané telefonní číslo, jestli splňuje podmínky na délku čísla a předvolbu.
     """
@@ -12,6 +12,14 @@ def over_telefon(tel_cislo: int) -> bool:
         return True
     else:
         return False
+    
+    #funkce by šla napsat i takto:
+
+    # if predvolba == "+420" and len(tel_cislo) == 13:
+    #     return True
+    # if len(tel_cislo) == 9:
+    #     return True
+    # return False
 
 overeni_cisla = over_telefon(tel_cislo)
 # print(overeni_cisla) <--- pro případnou kontrolu
@@ -22,7 +30,7 @@ if overeni_cisla == False: #od Kačky: lepší je if not overeni_cisla
 else:
     zprava = input("Zadej text zprávy: ")
 
-import math
+import math #dává se na začátek souboru
 
 def cena_zpravy(zprava: str) -> int:
     """
