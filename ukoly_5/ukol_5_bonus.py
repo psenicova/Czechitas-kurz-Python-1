@@ -11,18 +11,8 @@ teploty = [
 #Pomocí dict comprehension vytvoř slovník, který bude mít následující formát, kde klíčem bude den v týdnu, a hodnotou průměrná teplota ten den.
 #{den: průměrná teplota}
 
-for dny in teploty:
-    den = dny[0]
-    teplota1 = dny[1]
-    teplota2 = dny[2]
-    teplota3 = dny[3]
-    teplota4 = dny[4]
-    prumerna_teplota = round((teplota1 + teplota2 + teplota3 + teplota4) / 4,1) #jak dosadit 4 počtem teplot v jednotlivých dnech?
-    print(den)
-    print(prumerna_teplota)
-
-prumerne_teploty = {}
-prumerne_teploty = [den, prumerna_teplota]
+prumerne_teploty = {teplota[0]: (round(sum(teplota[1:])/len(teplota[1:]),3)) for teplota in teploty}
+#prumerne_teploty = [den, prumerna_teplota]
 print(prumerne_teploty)
 
 # prumerne_teploty = {}
