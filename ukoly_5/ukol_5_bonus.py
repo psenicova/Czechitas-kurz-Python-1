@@ -12,14 +12,4 @@ teploty = [
 #{den: průměrná teplota}
 
 prumerne_teploty = {teplota[0]: (round(sum(teplota[1:])/len(teplota[1:]),3)) for teplota in teploty}
-#prumerne_teploty = [den, prumerna_teplota]
 print(prumerne_teploty)
-
-# prumerne_teploty = {}
-# prumerne_teploty = {den: str(prumerna_teplota) for den, prumerna_teplota in teploty.items()}
-# print(prumerne_teploty)
-
-#prumerne_teploty = {[sum(teplota) / len(teplota)] for den, teplota in teploty.items()}
-#print(prumerne_teploty)
-#prumerne_teploty = {den: sum(teplota) / len(teplota) for den, teplota in teploty.items()}
-#print(prumerne_teploty)
