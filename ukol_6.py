@@ -13,7 +13,7 @@ else:
     print("Zadané uživatelské jméno nesplňuje podmínky.")
     exit()
 
-regularni_vyraz2 = re.compile(r"\S{12,30}")
+regularni_vyraz2 = re.compile(r"[\w\-.+=]{12,30}")
 
 kontrola_hesla = regularni_vyraz2.fullmatch(heslo)
 
